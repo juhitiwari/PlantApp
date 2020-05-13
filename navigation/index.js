@@ -20,7 +20,8 @@ const screens=createStackNavigator({
    Forgot,
    Signup,
    Browse,
-   Settings
+   Settings,
+   Explore
 
    
 

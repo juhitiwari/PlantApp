@@ -2,15 +2,27 @@ import React, { Component } from 'react';
 import { View, StyleSheet,Image, TouchableOpacity, ScrollView, Dimensions } from 'react-native';
 import { Block,Text,Button, Badge,Card } from '../components';
 import {theme, mocks} from '../constants'
-import navigation from '../navigation';
-import { categories } from '../constants/mocks';
+
 
 
 const { width } =Dimensions.get("window");
 
  class Browse extends Component {
      state={
-         active:'Products'
+         active:'Products',
+         categories:[]
+     }
+
+     componentDidMount(){
+         this.setState({categories:this.props.categories})
+     }
+
+     handleTab=tab=>{
+         const {categories}=this.props
+         const filtered=categories.filter(
+             category=>category.tags.includes(tab.toLowerCase())
+         )
+         this.setState({active:tab,categories:filtered})
      }
 
     renderTab(tab){
@@ -19,7 +31,7 @@ const { width } =Dimensions.get("window");
         return(
             <TouchableOpacity
             key={`tab-${tab}`}
-            onPress={()=>this.setState({active:tab})}
+            onPress={()=>this.handleTab(tab)}
             style={[styles.tab,
             isActive?styles.active:null]}>
 
@@ -30,7 +42,8 @@ const { width } =Dimensions.get("window");
     }
 
   render() {
-    const {profile,navigation,categories}=this.props
+    const {profile,navigation}=this.props
+    const {categories}=this.state
     const tabs=['Products','Inspirations','Shop']
 
     return (
