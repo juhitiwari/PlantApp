@@ -21,7 +21,8 @@ const screens=createStackNavigator({
    Signup,
    Browse,
    Settings,
-   Explore
+   Explore,
+   Product
 
    
 
