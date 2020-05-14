@@ -1,6 +1,6 @@
 # PlantApp
 
-PlantApp is the UI implmentation of the design : <br/>
+PlantApp is the UI implementation of the design : <br/>
 https://dribbble.com/shots/4569970-Plant-Freebie-2-Dribbble-Invites
 
 <img src="https://github.com/juhitiwari/PlantApp/blob/master/images/pagif1.gif" width="300" height="500" />        <img src="https://github.com/juhitiwari/PlantApp/blob/master/images/pa2.jpg" width="300" height="500" />
